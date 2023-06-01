@@ -85,7 +85,7 @@ object FileUtils {
                 connection?.connect();
                 //储存文件
                 saveFile =
-                    File("${getDir(context)}${File.separator}${downloadUrl.hashCode()}${connection?.fileExt()}")
+                    File("${getDir(context)}${File.separator}${downloadUrl.hashCode()}.${downloadUrl.substringAfterLast('.', "")}")
                 Log.e("saveFile===+>","$saveFile")
                 //如果文件已存在 不再下载 直接读取展示
                 if (saveFile!!.exists()) {
